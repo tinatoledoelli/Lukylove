@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Agos + Luky</title>
+<style>
+  body {
+    margin: 0;
+    background: #000;
+    overflow: hidden;
+    font-family: Arial;
+  }
+
+  .heart {
+    position: absolute;
+    font-size: 24px;
+    animation: float 2s ease-out forwards;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100px); opacity: 0; }
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+</style>
+</head>
+<body>
+
+<div class="footer">Agos + Luky ❤️</div>
+
+<script>
+document.addEventListener("click", e => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.textContent = "❤️";
+  heart.style.left = e.clientX + "px";
+  heart.style.top = e.clientY + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 2000);
+});
+</script>
+
+</body>
+</html>
